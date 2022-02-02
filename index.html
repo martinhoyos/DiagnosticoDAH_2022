@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estiloTabla.css">
+    <title>Index - Diagnostico</title>
+</head>
+<body>
+    <h2>Bienvenido admin</h2>
+    <label for="numeroText">Número a Factorizar</label>
+    <input type="number" id="numeroText">
+    <br>
+    <button type="submit" onclick="llenarTablaFactorizado()">Llenar Tabla</button>
+    <br>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Iteración</th>
+                <th>Expresión</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody id="cont">
+
+        </tbody>
+    </table>
+    <script>
+        function llenarTablaFactorizado(){
+            let numeroMeta = document.querySelector('#numeroText');
+            console.log(numeroMeta.value);
+
+            var ite = 1;
+            var exp = "1";
+            var val = 1;
+            var clasePar = "";
+
+
+            cont.innerHTML='';
+
+            for(ite;ite<=numeroMeta.value;ite++){
+                exp += "*"+ite;
+                val = val * ite;
+                
+                console.log(ite+" | "+exp+" | "+val);
+
+                if(ite%2==0){
+                    clasePar = "Par";
+                }else {
+                    clasePar = "Impar";
+                }
+
+                cont.innerHTML += `
+                <tr class="${clasePar}"">
+                    <td class="iteracion">${ite}</td>
+                    <td>${exp}</td>
+                    <td class="valor">${val}</td>
+                </tr>
+                `
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+table {
+    border: 1px solid #000;
+}
+
+.Impar {
+    background-color: white;
+}
+
+.Par {
+    background-color: rgba(150, 235, 221, 0.438);
+}
+
+th {
+    background-color: #000;
+    color: white;
+    border: 1px solid #000;
+}
+
+td {
+    border: 1px solid #000;
+}
+
+.iteracion {
+    text-align: center;
+    border: 1px solid #000;
+}
+
+.valor {
+    text-align: end;
+    border: 1px solid #000;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login - Diagnostico</title>
+</head>
+<body>
+    <label for="loginText">Usuario</label>
+    <input type="text" id="loginText" placeholder="Nombre de usuario">
+    <br>
+    <label for="passwordText">Contraseña</label>
+    <input type="password" id="passwordText" placeholder="Contraseña">
+    <br>
+    <button id="btnChequeo" type="submit" onclick="corroborarLogin()">Iniciar Sesion</button>
+    <script>
+
+        function corroborarLogin(){
+            let usuario = document.querySelector('#loginText');
+            let contraseña = document.querySelector('#passwordText');
+            
+            if(usuario.value == 'admin' && contraseña.value == 'admin'){
+                location.href = "./index.html";
+            } else {
+                alert("Usuario y/o contraseña incorrectos.");
+                usuario.value = "";
+                contraseña.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
